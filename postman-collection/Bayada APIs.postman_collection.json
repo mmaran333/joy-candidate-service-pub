@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "3e820478-8aa6-461e-92f4-fda31b8518f6",
+		"name": "Bayada APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10317497"
+	},
+	"item": [
+		{
+			"name": "candidate_service",
+			"item": [
+				{
+					"name": "add candidate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"role\": \"CANDIDATE\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Dawson\",\r\n    \"email\": \"john.dawson@gmail.com\",\r\n    \"phone\": \"+18989898989\",\r\n    \"primaryCommunication\": \"EMAIL\",\r\n    \"jobs\": [\r\n        \"Job A\",\r\n        \"Job B\"\r\n    ],\r\n    \"screening\": [\r\n        {\r\n            \"answers\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"question\": \"What is your favorite color?\"\r\n        },\r\n        {\r\n            \"answers\": [\r\n                \"Referral\"\r\n            ],\r\n            \"question\": \"How did you hear about us?\"\r\n        }\r\n    ],\r\n    \"interviewType\": \"CALL\",\r\n    \"interviewEligibility\": \"NO\",\r\n    \"zip\": \"12345\",\r\n    \"accountVerified\": true,\r\n    \"appLanguagePreference\": \"EN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get candidate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate/e9ba4a6e",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate",
+								"e9ba4a6e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update candidate",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"c85e1984\",\r\n    \"role\": \"CANDIDATE\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": null,\r\n    \"lastName\": \"Dawson\",\r\n    \"email\": \"john.dawson@gmail.com\",\r\n    \"phone\": \"+18989898989\",\r\n    \"primaryCommunication\": \"EMAIL\",\r\n    \"jobs\": [\r\n        \"Job A\",\r\n        \"Job B\"\r\n    ],\r\n    \"screening\": [\r\n        {\r\n            \"answers\": [\r\n                \"Red\",\r\n                \"Blue\",\r\n                \"Green\"\r\n            ],\r\n            \"question\": \"What is your favorite color?\"\r\n        },\r\n        {\r\n            \"answers\": [\r\n                \"Referral\"\r\n            ],\r\n            \"question\": \"How did you hear about us?\"\r\n        }\r\n    ],\r\n    \"interviewType\": \"CALL\",\r\n    \"interviewEligibility\": \"NO\",\r\n    \"zip\": \"12345\",\r\n    \"accountVerified\": null,\r\n    \"appLanguagePreference\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workday_integration",
+			"item": [
+				{
+					"name": "Get prospect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate/wd-integ/prospects/083e1feb78d59000f93341aa81820000",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate",
+								"wd-integ",
+								"prospects",
+								"083e1feb78d59000f93341aa81820000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create prospect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidate\": {\r\n    \"email\":\"test6@joy.com\",\r\n    \"phoneNumber\": \"415-789-8905\",\r\n    \"countryPhoneCode\": {\r\n        \"id\": \"db8d3ca6446c11de98360015c5e6daf6\"\r\n    },\r\n    \"name\": {\r\n        \"firstName\": \"Test\",\r\n        \"lastName\": \"User6\",\r\n        \"country\": {\r\n            \"id\": \"bc33aa3152ec42d4995f4791a106ed09\"\r\n        }\r\n    }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate/wd-integ/prospects",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate",
+								"wd-integ",
+								"prospects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace expired access token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://dev.rf.ustpace.com/v1/api/candidate/wd-integ/access-tokens",
+							"protocol": "http",
+							"host": [
+								"dev",
+								"rf",
+								"ustpace",
+								"com"
+							],
+							"path": [
+								"v1",
+								"api",
+								"candidate",
+								"wd-integ",
+								"access-tokens"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

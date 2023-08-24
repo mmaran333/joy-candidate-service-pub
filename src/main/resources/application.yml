@@ -1,0 +1,30 @@
+spring:
+  data:
+    mongodb:
+      uri : mongodb+srv://muhammedshaik1999:shaik%40786@oktadb.szvadsm.mongodb.net/?retryWrites=true&w=majority
+      database : Auth1
+
+server:
+  port : 9001
+management:
+    endpoint:
+      health:
+        show-details: "ALWAYS"
+
+ssl:
+    enabled: false
+   # trust-store: "classpath:jks/client-truststore.p12"
+    #trust-store-password: secret
+  
+integration:
+   workday:
+      pem: jks/workday.pem
+      jwt-bearer-grant: 
+         jks: jks/JWTkeystore.jks
+      endpoint: https://impl-services1.wd12.myworkday.com/ccx
+      keystore:
+         password: Workday123!
+         alias: Workday
+      isu-username: ISU_UST
+      client-id: MDc2YWQxYTMtZDkzZC00M2QyLTk2ZmEtNjkxODg4NzQ1OTli
+        
